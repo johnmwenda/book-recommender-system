@@ -13,3 +13,7 @@ There are at least three ways we can implement a recommender system.
 2. Ask the user for a list of products they liked. And based on our knowledge of all products suggest similar products which the user might be interested in. This is the approach many experienced store owners use instinctively since they have broad knowledge about their products. The disadvantage with this is that we require a good amount of knowledge about the particular product before we can make a suggestion
 
 3. The third approach doesn't require us to know anything about the product. We only need to know what other people like or dislike. Then from this information we can easily cluster users according to products they like or dislike. After clustering users with similar preferences we can easily suggest products to a user, which their cluster liked but which the user hasn't tried yet.
+
+
+###### Environment
+I recommend installing Anaconda that comes with all the analytics packages we will need in the later phases of the product.
