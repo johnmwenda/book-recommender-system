@@ -47,6 +47,7 @@ coverage.xml
 # Django stuff:
 *.log
 settings*.py
+local_settings.py
 *.sqlite
 /CACHE
 
@@ -63,3 +64,5 @@ target/
 node_modules
 venvrecommender/
 .vscode/
+Procfile
+runtime.txt
