@@ -23,3 +23,10 @@ urlpatterns = [
     url(r'^accounts/', include('django.contrib.auth.urls', namespace="auth")),
     
 ]
+
+
+#Add URL maps to redirect the base URL to our application
+from django.views.generic import RedirectView
+urlpatterns += [
+    url(r'', RedirectView.as_view(url='/reviews/', permanent=True)),
+]

@@ -9,6 +9,8 @@ from .suggestions import update_clusters
 
 from django.contrib.auth.decorators import login_required
 
+from django.http import HttpResponse
+
 
 def review_list(request):
     latest_review_list = Review.objects.order_by('-pub_date')[:9]
@@ -77,6 +79,7 @@ def user_recommendation_list(request):
             username=request.user.username).cluster_set.first().name
     except:  # if no cluster has been assigned for a user update the Cluster
         update_clusters()
+        return HttpResponse("Please rate atleast 4 products first, so as to teach us your preference ")
         user_cluster_name = User.objects.get(
             username=request.user.username).cluster_set.first().name
         return

@@ -28,10 +28,13 @@ class Review(models.Model):
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
 
+    def __str__(self):
+        return self.comment+'-'+str(self.rating)
+
 
 class Cluster(models.Model):
     name = models.CharField(max_length=100)
-    users = models.ManyToManyField(User)
+    users = models.ManyToManyField(User, related_name='clusters')
 
     def get_members(self):
         return "\n".join([u.username for u in self.users.all()])
